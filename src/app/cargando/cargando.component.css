@@ -1,0 +1,16 @@
+img{
+    z-index: 10;
+    max-width: 300px;
+    width: 100%;
+    height: auto;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background-color: whitesmoke;
+    border-radius: 3em;
+    margin-right: 1em;
+    margin-bottom: 1em;
+    padding: 1em;
+    border: solid 2px silver;
+    box-shadow: 0.5em 0.5em 1.5em black;
+}

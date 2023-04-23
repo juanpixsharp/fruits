@@ -1,0 +1,17 @@
+<hr style="padding-top:2em; padding-bottom: 2em;">
+<div class="container-fluid">
+    <div class="row">
+        <div *ngFor="let fruta of frutas" class="col-xs-11 col-md-3 mx-auto fruta">
+            <h3 style="font-weight: bolder;" class="text-center">{{fruta.nombre}}</h3>
+            <ul>
+                <li *ngIf="fruta.detalles.photo_url!=null && fruta.detalles.photo_url!=''">
+                    <div class="text-center">
+                        <img [src]="this.url_base + fruta.detalles.photo_url" alt="{{fruta.nombre}}" class="img-responsive">
+                    </div>
+                </li>
+                <li>Precio: <b>{{fruta.detalles.price}}</b></li>
+                <li>Categoria: <b>{{fruta.detalles.category_url.split('/').pop()}}</b></li>
+            </ul>
+        </div>
+    </div>
+</div>

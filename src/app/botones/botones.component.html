@@ -1,0 +1,15 @@
+<hr>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col text-center" *ngIf="prePag">
+            <button class="btn btn-warning form-control" (click)="iniciaPagina()">Inicio</button>
+        </div>
+        <div class="col text-center" *ngIf="prePag">
+            <button class="btn btn-info form-control" (click)="anteriorPagina()">Atras</button>
+        </div>
+        <div class="col text-center" *ngIf="sigPag">
+            <button class="btn btn-primary form-control" (click)="siguientePagina()">Siguiente</button>
+        </div>
+    </div>
+</div>
+<hr>

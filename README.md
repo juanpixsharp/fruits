@@ -1,27 +1,42 @@
-# Frutas
+# Aplicación Frutas
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.5.
+Este es un laboratorio para poner en práctica lo aprendido de desarrollo con Angular, para ello se hace uso del WebServices 'https://api.predic8.de/shop/products/'.
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+La aplicación se ha dividido en los siguientes elementos:
 
-## Code scaffolding
+## Header
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+El Header es un título simple con una imagen que se ha colocado dentro del componente principal.
 
-## Build
+## Frutas
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Se muestra un listado de frutas cargadas, resultado de consultar el WebServices mencionado.
 
-## Running unit tests
+## FrutasService
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Servicio de apoyo para interactuar con el WebServices y transmitir a todos los componentes de la aplicación.
 
-## Running end-to-end tests
+En ocasiones el API retorna errores de resultados por la velocidad o cantidad de consultas, cuando esto sucede se hace un reintento cada 5 segundos para obtener resultados y mostrarlos al usuario.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Para renderizar el resultado del WebService se hace uso de las siguientes clases:
 
-## Further help
+### Pagina
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Clase para manejar el resultado de la consulta GET a la api /shop/products/
+
+### FrutaGeneral
+
+Clase de conversión de los productos obtenidos de la consulta GET a la api /shop/products/
+
+### FrutaDetalle
+
+Clase para manejar el resultado de la consulta GET a la api /shop/products/{id}
+
+## Botones
+
+Componente para mostrar los botones de navegación del usuario: Inicio, Atras y Siguiente; los cuale spermiten navegar entre los diferentes resultados que provee el API.
+
+## Cargando
+
+Imagen para indicar al usuario que se está cargando la información, este se mostrará unicamente bajo la condición de estar consultado el WebService.

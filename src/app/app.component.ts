@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { BootstrapOptions, Component } from '@angular/core';
+import { FrutasService } from './frutas/frutas.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'frutas';
+
+  cargandoFrutas:boolean = true;
+
+  constructor(private frutasService: FrutasService){
+  }
+
+
+  estaCargando(): boolean{
+    return this.frutasService.cargando;
+  }
+
 }
